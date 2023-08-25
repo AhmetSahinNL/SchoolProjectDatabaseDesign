@@ -2,7 +2,7 @@
 Eğitim Projemdeki SQL Ödevim
 
 
-```TSQL
+```MYSQL
 CREATE TABLE [dbo].[Students](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[PersonId] [int] NOT NULL,
