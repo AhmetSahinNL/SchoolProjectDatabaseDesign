@@ -3,15 +3,19 @@
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
-Projenin Diagram Alanı Üzerinden Görüntüsü
+Projenin Diagram Alanı Üzerinden Genel Görüntüsü
+
 
 ![resim](https://github.com/AhmetSahinNL/SchoolProjectDatabaseDesign/assets/139613517/38f93cdc-ab84-460c-bd7a-79f3ce53b983)
 
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
-
 Bu tabloda kişilerin tüm temel bilgileri yer almaktadır.
+
+
+![resim](https://github.com/AhmetSahinNL/SchoolProjectDatabaseDesign/assets/139613517/36fc7662-f58b-48c5-b9b1-fa5514f600cb)
+
 
 • Status ==> Öğrenci, öğretmen veya farklı bir birimde olan kişileri temsil eden alandır.
 • IdentificationNumber ==> TC Kimlik numarasının yazıldığı alan.
@@ -22,6 +26,10 @@ Bu tabloda kişilerin tüm temel bilgileri yer almaktadır.
 • ContactId ==> E-posta, telefon ve adres gibi diğer iletişim bilgilerinin çekildiği alandır. (Bilgiler  [ContactInformations] tablosundan çekilmektedir.
 
 NOT = { Bu tablodaki 'Id' değeri ile 'Students' tablosundaki 'PersonId' ve 'Teachers' tablosundaki 'PersonId' değerlerine kişilere ait bilgileri aktarmaktadır. }
+
+
+![resim](https://github.com/AhmetSahinNL/SchoolProjectDatabaseDesign/assets/139613517/e05179cc-68c0-46ae-b91a-cfa42e46055d)
+
 
 ```MYSQL
 CREATE TABLE [dbo].[Persons](
@@ -45,6 +53,10 @@ CREATE TABLE [dbo].[Persons](
 
 İletişim bilgilerinin depolandığı tablodur.
 
+
+![resim](https://github.com/AhmetSahinNL/SchoolProjectDatabaseDesign/assets/139613517/d8351b7c-c51b-43b1-ab20-80a8c5ae8eda)
+
+
 • PhoneNumber ==> Telefon numarası bilgilerini tutan alandır.
 • Email ==> E posta adreslerinin bulunduğu kısım.
 • Address ==> Adres bilgilerinin yer aldığı değerdir.
@@ -66,7 +78,12 @@ CREATE TABLE [dbo].[ContactInformations](
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
+
 Öğrencilere ait bilgilerin bulunduğu tablodur.
+
+
+![resim](https://github.com/AhmetSahinNL/SchoolProjectDatabaseDesign/assets/139613517/1aa5e268-984e-4880-ac42-99ed6f92b0ff)
+
 
 • PersonId ==> Persons tablosundan öğrencilere ait temel bilgiler çekilmektedir.
 • StudentId ==> Öğrenci numarasının bulunduğu kısım.
@@ -91,7 +108,13 @@ CREATE TABLE [dbo].[Students](
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
+
 Öğretmen bilgilerinin bulunduğu tablodur.
+
+
+![resim](https://github.com/AhmetSahinNL/SchoolProjectDatabaseDesign/assets/139613517/aeb12ca4-22f0-4415-ba00-ea2674c50eb7)
+
+
 
 • PersonId ==> Persons tablosundan öğretmenlere ait temel bilgiler çekilmektedir.
 • TeacherId ==> Öğretmen numarasının bulunduğu kısım.
@@ -115,7 +138,13 @@ CREATE TABLE [dbo].[Teachers](
 ```
 ----------------------------------------------------------------------------------------------------------------------------------
 
+
 Sınıf isimlerinin bulunduğu tablodur.
+
+
+![resim](https://github.com/AhmetSahinNL/SchoolProjectDatabaseDesign/assets/139613517/8ae16c90-53ea-4ca7-9f86-f3d43ab8acce)
+
+
 
 NOT = { Bu tablodaki 'Id' değeri 'Exams' tablosundaki 'ClassId' ve 'Attendances' tablosundaki 'ClassId' değerlerine sınıf bilgilerini aktarmaktadır. }
 
@@ -132,7 +161,13 @@ CREATE TABLE [dbo].[Classes](
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
+
 Derslerin bulunduğu tablodur.
+
+
+![resim](https://github.com/AhmetSahinNL/SchoolProjectDatabaseDesign/assets/139613517/2da57930-65b1-4c63-a086-e875be2bd911)
+
+
 
 NOT = { Bu tablodaki 'Id' değeri 'Exams' tablosundaki 'LessonId' ve 'Attendances' tablosundaki 'LessonId' değerlerine ders bilgilerini aktarmaktadır. }
 
@@ -149,7 +184,12 @@ CREATE TABLE [dbo].[Lessons](
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
+
 Yoklama bilgilerinin tutulduğu tablodur.
+
+
+![resim](https://github.com/AhmetSahinNL/SchoolProjectDatabaseDesign/assets/139613517/0d34daf5-9f54-4b22-80f0-adde3f369e8f)
+
 
 • TeacherId ==> Öğretmen numarasının bulunduğu kısım.
 • ClassId ==> Sınıf bilgilerinin bulunduğu alan. (Bilgiler [Classes] tablosundan çekilmektedir.)
@@ -157,6 +197,9 @@ Yoklama bilgilerinin tutulduğu tablodur.
 • StudentId ==> Öğrenci numarasının bulunduğu alan. (Bilgiler [StudentId] tablosundan çekilmektedir.)
 • Date ==> Yoklama alınan tarihi belirtir. 
 • AttendanceStatus ==> Yoklamanın durumunu yani gelmeyen öğrencileri belirtir. Öğrenci gelmedi ise işlem 'False' döner.
+
+
+![resim](https://github.com/AhmetSahinNL/SchoolProjectDatabaseDesign/assets/139613517/8bc39aa1-c038-4cd9-8ce5-54b5f797f81a)
 
 
 ```MYSQL
@@ -177,7 +220,12 @@ CREATE TABLE [dbo].[Attendances](
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
+
 Sınavların ve sonuçlarının bulunduğu tablodur. 
+
+
+![resim](https://github.com/AhmetSahinNL/SchoolProjectDatabaseDesign/assets/139613517/9881a9c3-7180-4616-9dc5-1124308eacef)
+
 
 • StudentId ==> Sınava girecek öğrencinin numarasının bulunduğu alandır.
 • ExamTeacherId ==> Sınav gözetmenliği yapan öğretmenin numarasının bulunduğu kısımdır.
@@ -186,6 +234,10 @@ Sınavların ve sonuçlarının bulunduğu tablodur.
 • Exam1 ==> 1. Sınav sonucunun tutulduğu alan.
 • Exam2 ==> 2. Sınav sonucunun tutulduğu alan.
 • Average ==> 2 Sınav da tamamlandıktan sonra sınav ortalamalarının otomatik olarak hesaplandığı kısımdır.
+
+
+![resim](https://github.com/AhmetSahinNL/SchoolProjectDatabaseDesign/assets/139613517/7a517c97-321b-4897-9bfd-2ca3add8783b)
+
 
 ```MYSQL
 CREATE TABLE [dbo].[Exams](
