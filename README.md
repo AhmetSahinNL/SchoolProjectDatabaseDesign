@@ -1,5 +1,5 @@
 ## SchoolProjectDatabaseDesign
-# Eğitim Projemdeki SQL Ödevim
+   Eğitim Projemdeki SQL Ödevim
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
@@ -264,6 +264,9 @@ CREATE TABLE [dbo].[Exams](
 1-) Öğrenci numarasına göre belirli bir öğrencinin bilgilerini getiren prosedür.
 
 
+![resim](https://github.com/AhmetSahinNL/SchoolProjectDatabaseDesign/assets/139613517/dc315123-2d29-401c-90ec-d74f11a86293)
+
+
 ```MYSQL
 CREATE PROCEDURE [dbo].[GetStudentInfoByStudentId]
     @StudentId VARCHAR(4)
@@ -291,6 +294,10 @@ EXEC GetStudentInfoByStudentId @StudentId = '1001';
 
 
 2-) Öğrenci numarası ile belirli bir öğrencinin sınavlarını ve sınav ortalamasını getiren prosedürdür.
+
+
+![resim](https://github.com/AhmetSahinNL/SchoolProjectDatabaseDesign/assets/139613517/16e7dd09-57eb-4817-a1d2-08a805b71456)
+
 
 
 ```MYSQL
@@ -347,6 +354,10 @@ EXEC [dbo].[DeleteStudent]
 1-) Öğretmenlerin ve iletişim bilgilerinin tek seferde çekildiği view 'dir.
 
 
+![resim](https://github.com/AhmetSahinNL/SchoolProjectDatabaseDesign/assets/139613517/0b880af2-e7ed-4da5-8057-362a57b9016c)
+
+
+
 ```MYSQL
 CREATE VIEW TeacherInfoWithContactView AS
 SELECT
@@ -365,8 +376,28 @@ JOIN Persons p ON t.PersonId = p.Id
 JOIN ContactInformations ci ON p.ContactId = ci.Id;
 ```
 
+Bu kod ile de view kullanılmaktadır.
+
+```MYSQL
+SELECT
+    "First Name",
+    "Last Name",
+    Gender,
+    "Date of Birth",
+    TeacherId,
+    Branch,
+    StartingDate,
+    PhoneNumber,
+    Email,
+    Address
+FROM TeacherInfoWithContactView;
+```
+
 
 2-) Tüm öğrencilerin bilgilerini gösteren view 'dir.
+
+![resim](https://github.com/AhmetSahinNL/SchoolProjectDatabaseDesign/assets/139613517/bd4b54c3-14ce-47a8-bad5-a798599df88a)
+
 
 
 ```MYSQL
