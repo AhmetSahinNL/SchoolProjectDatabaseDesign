@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [NewSchoolDb]    Script Date: 26.08.2023 02:02:55 ******/
+/****** Object:  Database [NewSchoolDb]    Script Date: 26.08.2023 04:32:38 ******/
 CREATE DATABASE [NewSchoolDb]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -82,7 +82,7 @@ ALTER DATABASE [NewSchoolDb] SET QUERY_STORE (OPERATION_MODE = READ_WRITE, CLEAN
 GO
 USE [NewSchoolDb]
 GO
-/****** Object:  Table [dbo].[Students]    Script Date: 26.08.2023 02:02:55 ******/
+/****** Object:  Table [dbo].[Students]    Script Date: 26.08.2023 04:32:38 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -99,7 +99,7 @@ CREATE TABLE [dbo].[Students](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Persons]    Script Date: 26.08.2023 02:02:55 ******/
+/****** Object:  Table [dbo].[Persons]    Script Date: 26.08.2023 04:32:38 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -119,7 +119,7 @@ CREATE TABLE [dbo].[Persons](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  View [dbo].[StudentInfoView]    Script Date: 26.08.2023 02:02:55 ******/
+/****** Object:  View [dbo].[StudentInfoView]    Script Date: 26.08.2023 04:32:38 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -136,7 +136,7 @@ SELECT
 FROM Students s
 JOIN Persons p ON s.PersonId = p.Id;
 GO
-/****** Object:  Table [dbo].[Teachers]    Script Date: 26.08.2023 02:02:55 ******/
+/****** Object:  Table [dbo].[Teachers]    Script Date: 26.08.2023 04:32:38 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -153,7 +153,7 @@ CREATE TABLE [dbo].[Teachers](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ContactInformations]    Script Date: 26.08.2023 02:02:55 ******/
+/****** Object:  Table [dbo].[ContactInformations]    Script Date: 26.08.2023 04:32:38 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -169,7 +169,7 @@ CREATE TABLE [dbo].[ContactInformations](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  View [dbo].[TeacherInfoWithContactView]    Script Date: 26.08.2023 02:02:56 ******/
+/****** Object:  View [dbo].[TeacherInfoWithContactView]    Script Date: 26.08.2023 04:32:38 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -190,7 +190,7 @@ FROM Teachers t
 JOIN Persons p ON t.PersonId = p.Id
 JOIN ContactInformations ci ON p.ContactId = ci.Id;
 GO
-/****** Object:  Table [dbo].[Attendances]    Script Date: 26.08.2023 02:02:56 ******/
+/****** Object:  Table [dbo].[Attendances]    Script Date: 26.08.2023 04:32:38 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -209,7 +209,7 @@ CREATE TABLE [dbo].[Attendances](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Classes]    Script Date: 26.08.2023 02:02:56 ******/
+/****** Object:  Table [dbo].[Classes]    Script Date: 26.08.2023 04:32:39 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -223,7 +223,7 @@ CREATE TABLE [dbo].[Classes](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Exams]    Script Date: 26.08.2023 02:02:56 ******/
+/****** Object:  Table [dbo].[Exams]    Script Date: 26.08.2023 04:32:39 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -243,7 +243,7 @@ CREATE TABLE [dbo].[Exams](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Lessons]    Script Date: 26.08.2023 02:02:56 ******/
+/****** Object:  Table [dbo].[Lessons]    Script Date: 26.08.2023 04:32:39 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -312,7 +312,25 @@ REFERENCES [dbo].[Persons] ([Id])
 GO
 ALTER TABLE [dbo].[Teachers] CHECK CONSTRAINT [FK_Teachers_Persons]
 GO
-/****** Object:  StoredProcedure [dbo].[GetStudentExamResults]    Script Date: 26.08.2023 02:02:56 ******/
+/****** Object:  StoredProcedure [dbo].[DeleteStudent]    Script Date: 26.08.2023 04:32:39 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE PROCEDURE [dbo].[DeleteStudent]
+    @StudentId VARCHAR(4)
+AS
+BEGIN
+    DECLARE @PersonId INT
+
+    SELECT @PersonId = PersonId FROM Students WHERE StudentId = @StudentId
+
+    DELETE FROM Students WHERE StudentId = @StudentId
+
+    DELETE FROM Persons WHERE Id = @PersonId
+END;
+GO
+/****** Object:  StoredProcedure [dbo].[GetStudentExamResults]    Script Date: 26.08.2023 04:32:39 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -329,7 +347,7 @@ BEGIN
     WHERE e.StudentId = @StudentId;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[GetStudentInfoByStudentId]    Script Date: 26.08.2023 02:02:56 ******/
+/****** Object:  StoredProcedure [dbo].[GetStudentInfoByStudentId]    Script Date: 26.08.2023 04:32:39 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -351,7 +369,7 @@ BEGIN
     WHERE s.StudentId = @StudentId;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[GetStudentsInfo]    Script Date: 26.08.2023 02:02:56 ******/
+/****** Object:  StoredProcedure [dbo].[GetStudentsInfo]    Script Date: 26.08.2023 04:32:39 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -371,7 +389,7 @@ BEGIN
     JOIN Persons p ON s.PersonId = p.Id;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[GetTeacherClasses]    Script Date: 26.08.2023 02:02:56 ******/
+/****** Object:  StoredProcedure [dbo].[GetTeacherClasses]    Script Date: 26.08.2023 04:32:39 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -387,7 +405,7 @@ BEGIN
     WHERE t.TeacherId = @TeacherId;
 END;
 GO
-/****** Object:  StoredProcedure [dbo].[GetTeachersInfo]    Script Date: 26.08.2023 02:02:56 ******/
+/****** Object:  StoredProcedure [dbo].[GetTeachersInfo]    Script Date: 26.08.2023 04:32:39 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
