@@ -8,7 +8,7 @@ Projenin Diagram Alanı Üzerinden Genel Görüntüsü
 
 ![resim](https://github.com/AhmetSahinNL/SchoolProjectDatabaseDesign/assets/139613517/38f93cdc-ab84-460c-bd7a-79f3ce53b983)
 
-
+ 
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Bu tabloda kişilerin tüm temel bilgileri yer almaktadır.
